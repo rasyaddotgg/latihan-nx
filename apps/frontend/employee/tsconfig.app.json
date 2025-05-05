@@ -37,7 +37,11 @@
     "src/**/*.jsx",
     "src/**/*.ts",
     "src/**/*.vue",
-    "../../../libs/frontend-lib/src/**/*.ts",
+    "../../../libs/frontend-lib/src/**/*.ts"
   ],
-  "references": []
+  "references": [
+    {
+      "path": "../../../libs/frontend-lib/tsconfig.lib.json"
+    }
+  ]
 }

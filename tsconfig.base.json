@@ -19,7 +19,7 @@
     "baseUrl": ".",
     "customConditions": ["development"],
     "paths": {
-      "@frontend-lib/*": ["libs/frontend-lib/src/*"],
+      "@frontend-lib/*": ["libs/frontend-lib/src/*"]
     }
   }
 }
