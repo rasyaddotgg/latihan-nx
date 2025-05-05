@@ -2,5 +2,21 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./apps/frontend/payroll"
+    },
+    {
+      "path": "./apps/frontend/employee"
+    },
+    {
+      "path": "./libs/frontend-lib"
+    },
+    {
+      "path": "./apps/backend/employee-service"
+    },
+    {
+      "path": "./apps/backend/api-gateway"
+    }
+  ]
 }

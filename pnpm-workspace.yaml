@@ -1,2 +1,6 @@
-packages: 
-  - "packages/*"
+packages:
+  - 'packages/*'
+  - 'apps/frontend/payroll'
+  - 'apps/frontend/employee'
+  - 'libs/frontend-lib'
+  - 'apps/backend/*'
