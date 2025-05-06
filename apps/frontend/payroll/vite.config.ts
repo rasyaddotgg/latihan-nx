@@ -24,18 +24,9 @@ export default defineConfig(() => ({
       exposes: {
         './PayrollList': './src/sections/payroll/PayrollList.vue',
         './PayrollButton': './src/components/PayrollButton.vue',
+        './TailwindButton': './src/components/TailwindButton.vue',
       },
-      shared: [
-        'vue',
-        'vue-router',
-        'primevue/datatable',
-        'primevue/column',
-        'primevue/button',
-        'primevue/inputtext',
-        'primevue/paginator',
-        'primevue/panel',
-        'primevue/checkbox',
-      ],
+      shared: ['vue', 'vue-router', 'primevue', 'tailwindcss'],
     }),
   ],
   // Uncomment this if you are using workers.
@@ -50,6 +41,8 @@ export default defineConfig(() => ({
       transformMixedEsModules: true,
     },
     target: 'esnext',
+    cssCodeSplit: false,
+    minify: false,
   },
   test: {
     watch: false,

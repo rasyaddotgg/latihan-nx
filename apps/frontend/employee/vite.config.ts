@@ -27,22 +27,19 @@ export default defineConfig(() => ({
       exposes: {
         './EmployeeList': './src/sections/employee/EmployeeList.vue',
       },
-      shared: ['vue'],
+      shared: ['vue', 'vue-router', 'primevue', 'tailwindcss'],
       remotes: {
         payroll: 'http://localhost:4500/assets/remoteEntry.js',
       },
     }),
-    Components({
-      resolvers: [PrimeVueResolver()],
-    }),
   ],
   resolve: {
-    alias: {
-      '@frontend-lib': path.resolve(
-        __dirname,
-        '../../../libs/frontend-lib/src'
-      ),
-    },
+    // alias: {
+    //   '@frontend-lib': path.resolve(
+    //     __dirname,
+    //     '../../../libs/frontend-lib/src'
+    //   ),
+    // },
   },
   // Uncomment this if you are using workers.
   // worker: {

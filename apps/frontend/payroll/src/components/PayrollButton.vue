@@ -10,6 +10,5 @@ defineProps({
 </script>
 
 <template>
-  <Button :label="label" />
-  <p>This content is coming from PayrollButton</p>
+  <Button :label="label" severity="danger" />
 </template>
