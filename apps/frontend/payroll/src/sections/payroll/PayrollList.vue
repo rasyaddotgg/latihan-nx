@@ -1,16 +1,14 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import {
-  IconField,
-  DataTable,
-  Column,
-  InputText,
-  MultiSelect,
-  Select,
-  Tag,
-  InputIcon,
-  Checkbox,
-} from 'primevue';
+import IconField from 'primevue/iconfield';
+import DataTable from 'primevue/datatable';
+import Column from 'primevue/column';
+import InputText from 'primevue/inputtext';
+import MultiSelect from 'primevue/multiselect';
+import Select from 'primevue/select';
+import Tag from 'primevue/tag';
+import InputIcon from 'primevue/inputicon';
+import Checkbox from 'primevue/checkbox';
 
 const customers = ref([
   {

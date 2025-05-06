@@ -6,6 +6,7 @@ import federation from '@originjs/vite-plugin-federation';
 import Components from 'unplugin-vue-components/vite';
 import { PrimeVueResolver } from '@primevue/auto-import-resolver';
 import path from 'path';
+// Import PrimeVue styles
 
 export default defineConfig(() => ({
   root: __dirname,
@@ -27,7 +28,22 @@ export default defineConfig(() => ({
       exposes: {
         './EmployeeList': './src/sections/employee/EmployeeList.vue',
       },
-      shared: ['vue', 'vue-router', 'primevue', 'tailwindcss'],
+      shared: [
+        'vue',
+        'vue-router',
+        'primevue/button',
+        'primevue/button',
+        'tailwindcss',
+        'primevue/iconfield',
+        'primevue/datatable',
+        'primevue/column',
+        'primevue/inputtext',
+        'primevue/multiselect',
+        'primevue/select',
+        'primevue/tag',
+        'primevue/inputicon',
+        'primevue/checkbox',
+      ],
       remotes: {
         payroll: 'http://localhost:4500/assets/remoteEntry.js',
       },
