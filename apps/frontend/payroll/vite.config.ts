@@ -43,24 +43,6 @@ export default defineConfig(() => ({
       ],
     }),
   ],
-  // optimizeDeps: {
-  //   include: [
-  //     'primevue',
-  //     'primevue/iconfield',
-  //     'primevue/datatable',
-  //     'primevue/column',
-  //     'primevue/inputtext',
-  //     'primevue/multiselect',
-  //     'primevue/select',
-  //     'primevue/tag',
-  //     'primevue/inputicon',
-  //     'primevue/checkbox',
-  //   ],
-  // },
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
   build: {
     outDir: './dist',
     emptyOutDir: true,

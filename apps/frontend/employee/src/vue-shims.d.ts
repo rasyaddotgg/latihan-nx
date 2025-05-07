@@ -20,3 +20,9 @@ declare module 'payroll/TailwindButton' {
   const component: ReturnType<typeof defineComponent>;
   export default component;
 }
+
+declare module 'employee/EmployeeMenu' {
+  import { defineComponent } from 'vue';
+  const component: ReturnType<typeof defineComponent>;
+  export default component;
+}

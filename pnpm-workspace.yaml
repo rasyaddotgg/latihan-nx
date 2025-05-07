@@ -4,3 +4,6 @@ packages:
   - 'apps/frontend/employee'
   - 'libs/frontend-lib'
   - 'apps/backend/*'
+  - 'apps/frontend/host'
+  - 'apps/frontend/host-app'
+  - 'apps/frontend/simple'

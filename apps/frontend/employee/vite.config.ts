@@ -3,10 +3,6 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import tailwindcss from '@tailwindcss/vite';
 import federation from '@originjs/vite-plugin-federation';
-import Components from 'unplugin-vue-components/vite';
-import { PrimeVueResolver } from '@primevue/auto-import-resolver';
-import path from 'path';
-// Import PrimeVue styles
 
 export default defineConfig(() => ({
   root: __dirname,
@@ -27,13 +23,13 @@ export default defineConfig(() => ({
       filename: 'remoteEntry.js',
       exposes: {
         './EmployeeList': './src/sections/employee/EmployeeList.vue',
+        './EmployeeMenu': './src/sections/employee/EmployeeMenu.vue',
       },
       shared: [
         'vue',
         'vue-router',
-        'primevue/button',
-        'primevue/button',
         'tailwindcss',
+        'primevue/button',
         'primevue/iconfield',
         'primevue/datatable',
         'primevue/column',
@@ -43,9 +39,13 @@ export default defineConfig(() => ({
         'primevue/tag',
         'primevue/inputicon',
         'primevue/checkbox',
+        'primevue/card',
+        'primevue/toast',
+        'primevue/toastservice',
       ],
       remotes: {
         payroll: 'http://localhost:4500/assets/remoteEntry.js',
+        host: 'http://localhost:4700/assets/remoteEntry.js',
       },
     }),
   ],
@@ -69,6 +69,9 @@ export default defineConfig(() => ({
       transformMixedEsModules: true,
     },
     target: 'esnext',
+    cssCodeSplit: false,
+    minify: false,
+    cssMinify: false,
   },
   test: {
     watch: false,

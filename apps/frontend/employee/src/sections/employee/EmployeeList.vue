@@ -1,8 +1,45 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { FilterMatchMode } from '@primevue/core/api';
+import DataTable from 'primevue/datatable';
+import Column from 'primevue/column';
+import InputText from 'primevue/inputtext';
+import MultiSelect from 'primevue/multiselect';
+import Select from 'primevue/selectbutton';
+import Checkbox from 'primevue/checkbox';
+import Tag from 'primevue/tag';
+import IconField from 'primevue/iconfield';
+import InputIcon from 'primevue/inputicon';
 
-const customers = ref();
+const customers = ref([
+  {
+    id: 1000,
+    name: 'Ioni Bowcher',
+    country: { name: 'United States', code: 'US' },
+    representative: { name: 'Amy Elsner', image: 'amyelsner.png' },
+    status: 'unqualified',
+    verified: true,
+    date: '2023-10-01',
+  },
+  {
+    id: 1001,
+    name: 'Ioni Bowcher',
+    country: { name: 'United States', code: 'US' },
+    representative: { name: 'Amy Elsner', image: 'amyelsner.png' },
+    status: 'qualified',
+    verified: true,
+    date: '2023-10-01',
+  },
+  {
+    id: 1002,
+    name: 'Ioni Bowcher',
+    country: { name: 'United States', code: 'US' },
+    representative: { name: 'Amy Elsner', image: 'amyelsner.png' },
+    status: 'new',
+    verified: true,
+    date: '2023-10-01',
+  },
+]);
 const filters = ref({
   global: { value: null, matchMode: FilterMatchMode.CONTAINS },
   name: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
@@ -31,9 +68,7 @@ const statuses = ref([
   'renewal',
   'proposal',
 ]);
-const loading = ref(true);
-
-onMounted(() => {});
+const loading = ref(false);
 
 const getCustomers = (data) => {
   return [...(data || [])].map((d) => {

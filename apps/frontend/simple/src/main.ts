@@ -1,20 +1,12 @@
-import './styles.css';
-import 'primeicons/primeicons.css';
-import ToastService from 'primevue/toastservice';
 import router from './router';
 import { createApp } from 'vue';
 import App from './app/App.vue';
 import PrimeVue from 'primevue/config';
-import { createPinia } from 'pinia';
 import Aura from '@primeuix/themes/aura';
 
 const app = createApp(App);
 app.use(router);
 app.use(PrimeVue, {
-  theme: {
-    preset: Aura,
-  },
+  theme: Aura,
 });
-app.use(ToastService);
-app.use(createPinia());
 app.mount('#root');

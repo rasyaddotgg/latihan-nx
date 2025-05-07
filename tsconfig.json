@@ -17,6 +17,12 @@
     },
     {
       "path": "./apps/backend/api-gateway"
+    },
+    {
+      "path": "./apps/frontend/simple"
+    },
+    {
+      "path": "./apps/frontend/host"
     }
   ]
 }
