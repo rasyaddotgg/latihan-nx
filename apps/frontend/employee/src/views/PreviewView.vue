@@ -3,7 +3,7 @@ import EmployeeMenu from '../sections/employee/EmployeeMenu.vue';
 </script>
 
 <template>
-  <main class="flex items-center justify-center min-h-screen">
+  <v-container>
     <EmployeeMenu />
-  </main>
+  </v-container>
 </template>

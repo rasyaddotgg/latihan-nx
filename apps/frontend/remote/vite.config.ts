@@ -7,22 +7,24 @@ export default defineConfig(() => ({
   root: __dirname,
   cacheDir: '../../../node_modules/.vite/apps/frontend/remote',
   server: {
-    port: 4500,
+    port: 4800,
     host: 'localhost',
+    strictPort: true,
   },
   preview: {
-    port: 4600,
+    port: 4900,
     host: 'localhost',
+    strictPort: true,
   },
   plugins: [
     vue(),
     federation({
-      name: 'remote',
+      name: 'remote-sample',
       filename: 'remoteEntry.js',
       exposes: {
         './RemoteButton': './src/components/RemoteButton.vue',
       },
-      shared: ['vue', 'vue-router', 'primevue/button'],
+      shared: ['vue', 'vue-router'],
     }),
   ],
   // Uncomment this if you are using workers.

@@ -1,76 +1,118 @@
 <script setup>
-import Card from 'primevue/card';
-import Button from 'primevue/button';
-import Toast from 'primevue/toast';
-import { useToast } from 'primevue/usetoast';
-const toast = useToast();
+import { ref } from 'vue';
+const snackbar = ref(false);
+const text = ref('Hello World! This is a snackbar message.');
 
-function showToast(actionFrom) {
-  toast.add({
-    severity: 'info',
-    summary: 'Action Info',
-    detail: `Action from ${actionFrom}`,
-    life: 3000,
-  });
+function sn(message) {
+  text.value = message;
+  snackbar.value = true;
 }
 </script>
 
 <template>
-  <main class="flex justify-center items-center min-h-screen">
-    <Toast />
-    <Card>
-      <template #title>
-        <h5 class="text-center mb-3">
-          <i class="pi pi-users" style="font-size: 1.5rem"></i>
-          Employee Menu
-        </h5>
+  <div class="text-center ma-2">
+    <v-snackbar v-model="snackbar">
+      {{ text }}
+      <template v-slot:actions>
+        <v-btn color="pink" variant="text" @click="snackbar = false">
+          Close
+        </v-btn>
       </template>
-      <template #content>
-        <div class="grid grid-cols-3 gap-3">
-          <Button
-            @click="showToast('Advance Search')"
-            label="Advance Search"
-            icon="pi pi-search"
-            iconPos="top"
-            severity="secondary"
-          />
-          <Button
-            @click="showToast('Manage Employee')"
-            label="Manage"
-            icon="pi pi-list"
-            iconPos="top"
-            severity="secondary"
-          />
-          <Button
-            @click="showToast('Contract')"
-            label="Contract"
-            icon="pi pi-file"
-            iconPos="top"
-            severity="secondary"
-          />
-          <Button
-            @click="showToast('Manage PTKP')"
-            label="Manage PTKP"
-            icon="pi pi-money-bill"
-            iconPos="top"
-            severity="secondary"
-          />
-          <Button
-            @click="showToast('Manage Shift')"
-            label="Manage Shift"
-            icon="pi pi-calendar"
-            iconPos="top"
-            severity="secondary"
-          />
-          <Button
-            @click="showToast('Manage Top Up')"
-            label="Manage Top Up"
-            icon="pi pi-wallet"
-            iconPos="top"
-            severity="secondary"
-          />
-        </div>
-      </template>
-    </Card>
-  </main>
+    </v-snackbar>
+  </div>
+  <v-card class="bg-green-lighten-1">
+    <template #title>
+      <div class="font-weight-bold text-center">HC</div>
+    </template>
+
+    <template v-slot:subtitle>
+      <p class="text-center mb-3">
+        Aksi yang dilakukan untuk mengelola data HC
+      </p>
+    </template>
+
+    <template v-slot:text>
+      <v-row no-gutters class="text-center justify-center mb-3">
+        <v-col cols="12" sm="6" md="3" lg="2" class="mb-sm-4">
+          <v-btn
+            class="rounded-button"
+            rounded
+            width="110"
+            height="110"
+            prepend-icon="mdi-file-account-outline"
+            stacked
+            variant="elevated"
+            @click="sn('Kelola Kontrak')"
+            >Kelola Kontrak</v-btn
+          >
+        </v-col>
+        <v-col cols="12" sm="6" md="3" lg="2" class="mb-sm-4">
+          <v-btn
+            class="rounded-button"
+            rounded
+            width="110"
+            height="110"
+            prepend-icon="mdi-account-group"
+            stacked
+            @click="sn('Kelola Pegawai')"
+            >Kelola Pegawai</v-btn
+          >
+        </v-col>
+        <v-col cols="12" sm="6" md="3" lg="2" class="mb-sm-4">
+          <v-btn
+            class="rounded-button"
+            rounded
+            width="110"
+            height="110"
+            prepend-icon="mdi-magnify"
+            @click="sn('Advance Data')"
+            stacked
+            >Advance Data</v-btn
+          >
+        </v-col>
+        <v-col cols="12" sm="6" md="3" lg="2" class="mb-sm-4">
+          <v-btn
+            class="rounded-button"
+            rounded
+            width="110"
+            height="110"
+            prepend-icon="mdi-currency-usd"
+            @click="sn('Kelola UMK')"
+            stacked
+            >Kelola UMK</v-btn
+          >
+        </v-col>
+        <v-col cols="12" sm="6" md="3" lg="2" class="mb-sm-4">
+          <v-btn
+            class="rounded-button"
+            rounded
+            width="110"
+            height="110"
+            prepend-icon="mdi-account-cash-outline"
+            @click="sn('Kelola Top Up')"
+            stacked
+            >Kelola Top Up</v-btn
+          >
+        </v-col>
+        <v-col cols="12" sm="6" md="3" lg="2" class="mb-sm-4">
+          <v-btn
+            class="rounded-button"
+            rounded
+            width="110"
+            height="110"
+            prepend-icon="mdi-cash"
+            @click="sn('Kelola UKPHK')"
+            stacked
+            >Kelola UKPHK</v-btn
+          >
+        </v-col>
+      </v-row>
+    </template>
+  </v-card>
 </template>
+
+<style scoped>
+.rounded-button {
+  border-radius: 50%;
+}
+</style>

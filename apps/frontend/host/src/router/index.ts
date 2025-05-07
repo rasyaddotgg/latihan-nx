@@ -1,13 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
+import AuthenticatedLayout from '../layouts/AuthenticatedLayout.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView,
+      name: 'layout',
+      component: AuthenticatedLayout,
+      children: [
+        {
+          path: '',
+          name: 'home',
+          component: HomeView,
+        },
+      ],
     },
     {
       path: '/about',

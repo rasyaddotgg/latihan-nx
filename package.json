@@ -56,6 +56,8 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "@module-federation/vite": "^1.2.7",
     "@nestjs/common": "^10.0.2",
     "@nestjs/core": "^10.0.2",
     "@nestjs/mapped-types": "^2.1.0",
@@ -73,6 +75,7 @@
     "rxjs": "^7.8.0",
     "tailwindcss": "^4.1.5",
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "vue-router": "^4.5.0",
+    "vuetify": "^3.8.4"
   }
 }

@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import PayrollButton from 'payroll/PayrollButton';
-import TailwindButton from 'payroll/TailwindButton';
-import PayrollList from 'payroll/PayrollList';
+// import PayrollButton from 'payroll/PayrollButton';
+// import TailwindButton from 'payroll/TailwindButton';
+// import PayrollList from 'payroll/PayrollList';
 </script>
 
 <template>
   <main>
-    <PayrollButton label="Hello world" />
+    ini home
+    <!-- <PayrollButton label="Hello world" />
     <PayrollList />
-    <TailwindButton />
+    <TailwindButton /> -->
   </main>
 </template>
