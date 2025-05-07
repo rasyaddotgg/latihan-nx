@@ -6,6 +6,6 @@ describe('App', () => {
   it('renders properly', async () => {
     const wrapper = mount(App, { global: { plugins: [router] } });
     await router.isReady();
-    expect(wrapper.text()).toContain('Welcome @latihan-nx/simple 👋');
+    expect(wrapper.text()).toContain('Welcome @latihan-nx/remote 👋');
   });
 });

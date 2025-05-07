@@ -5,25 +5,22 @@ import federation from '@originjs/vite-plugin-federation';
 
 export default defineConfig(() => ({
   root: __dirname,
-  cacheDir: '../../../node_modules/.vite/apps/frontend/simple',
+  cacheDir: '../../../node_modules/.vite/apps/frontend/remote',
   server: {
-    port: 4800,
+    port: 4500,
     host: 'localhost',
-    strictPort: true,
   },
   preview: {
-    port: 4900,
+    port: 4600,
     host: 'localhost',
-    strictPort: true,
   },
   plugins: [
     vue(),
     federation({
-      name: 'simple',
+      name: 'remote',
       filename: 'remoteEntry.js',
       exposes: {
-        './SimpleButton': './src/components/SimpleButton.vue',
-        './PrimeButton': './src/components/PrimeButton.vue',
+        './RemoteButton': './src/components/RemoteButton.vue',
       },
       shared: ['vue', 'vue-router', 'primevue/button'],
     }),
@@ -40,7 +37,8 @@ export default defineConfig(() => ({
       transformMixedEsModules: true,
     },
     target: 'esnext',
-    cssCodeSplit: true,
+    cssCodeSplit: false,
     minify: false,
+    cssMinify: false,
   },
 }));

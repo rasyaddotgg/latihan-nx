@@ -7,21 +7,20 @@ export default defineConfig(() => ({
   root: __dirname,
   cacheDir: '../../../node_modules/.vite/apps/frontend/host',
   server: {
-    port: 4600,
+    port: 4300,
     host: 'localhost',
-    strictPort: true,
   },
   preview: {
-    port: 4700,
+    port: 4400,
     host: 'localhost',
-    strictPort: true,
   },
   plugins: [
     vue(),
     federation({
       name: 'host',
+      filename: 'remoteEntry.js',
       remotes: {
-        simple: 'http://localhost:4900/assets/remoteEntry.js',
+        remote: 'http://localhost:4600/assets/remoteEntry.js',
       },
       shared: ['vue', 'vue-router', 'primevue/button'],
     }),
@@ -37,5 +36,9 @@ export default defineConfig(() => ({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
+    target: 'esnext',
+    cssCodeSplit: false,
+    minify: false,
+    cssMinify: false,
   },
 }));

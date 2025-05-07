@@ -4,6 +4,6 @@ import Button from 'primevue/button';
 
 <template>
   <main>
-    <Button label="Hello World" />
+    <Button label="Click Me" />
   </main>
 </template>

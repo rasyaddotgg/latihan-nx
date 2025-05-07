@@ -7,3 +7,4 @@ packages:
   - 'apps/frontend/host'
   - 'apps/frontend/host-app'
   - 'apps/frontend/simple'
+  - 'apps/frontend/remote'

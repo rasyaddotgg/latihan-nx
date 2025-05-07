@@ -221,6 +221,8 @@ importers:
 
   apps/frontend/payroll: {}
 
+  apps/frontend/remote: {}
+
   libs/frontend-lib: {}
 
 packages:
