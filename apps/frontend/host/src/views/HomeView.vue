@@ -1,8 +1,8 @@
 <script setup lang="ts">
-// import Button from 'primevue/button';
-// import RemoteButton from 'remote-sample/RemoteButton';
-// import EmployeeButton from 'employee/EmployeeButton';
 import EmployeeMenu from 'employee/EmployeeMenu';
+import Counter from '../components/Counter.vue';
+import PayrollCounter from 'payroll/PayrollCounter';
+import EmployeeCounter from 'employee/EmployeeCounter';
 </script>
 
 <template>
@@ -13,11 +13,25 @@ import EmployeeMenu from 'employee/EmployeeMenu';
       type="info"
       variant="tonal"
       class="mb-4"
-    ></v-alert>
-    <!-- <Button label="Click Me" /> -->
-    <!-- <RemoteButton />
-    <EmployeeButton /> -->
-    <EmployeeMenu />
-    <!-- <v-btn variant="outlined">Button from host</v-btn> -->
+    >
+    </v-alert>
+    <div class="mb-4">
+      <EmployeeMenu />
+    </div>
+    <div class="mb-4">
+      <v-row>
+        <v-col cols="12" sm="12">
+          <Counter />
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col cols="12" sm="6">
+          <PayrollCounter />
+        </v-col>
+        <v-col cols="12" sm="6">
+          <EmployeeCounter />
+        </v-col>
+      </v-row>
+    </div>
   </main>
 </template>

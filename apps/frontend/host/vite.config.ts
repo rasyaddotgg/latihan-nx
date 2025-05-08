@@ -22,13 +22,17 @@ export default defineConfig(() => ({
     tailwindcss(),
     federation({
       name: 'host',
-      // filename: 'remoteEntry.js',
+      filename: 'remoteEntry.js',
       remotes: {
         'remote-sample': 'http://localhost:4900/assets/remoteEntry.js',
         employee: 'http://localhost:4300/assets/remoteEntry.js',
+        payroll: 'http://localhost:4500/assets/remoteEntry.js',
+      },
+      exposes: {
+        './stores/useCounter': './src/stores/useCounter.ts',
       },
       // malah error rror: ENOENT: no such file or directory, stat 'D:\PROGRAMMING\LATIHAN\latihan-nx\apps\frontend\host\node_modules\primevue\button' pas di build
-      shared: ['vue', 'vue-router'],
+      shared: ['vue', 'vue-router', 'pinia'],
     }),
   ],
   // Uncomment this if you are using workers.

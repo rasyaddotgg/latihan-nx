@@ -1,11 +1,20 @@
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 const snackbar = ref(false);
 const text = ref('Hello World! This is a snackbar message.');
 
 function sn(message) {
   text.value = message;
   snackbar.value = true;
+}
+
+const router = useRouter();
+
+function navigateToExampleForm() {
+  router.push({
+    name: 'employee-list',
+  });
 }
 </script>
 
@@ -107,6 +116,15 @@ function sn(message) {
           >
         </v-col>
       </v-row>
+
+      <div class="flex justify-center">
+        <v-btn
+          prepend-icon="mdi-arrow-right-thin"
+          @click="navigateToExampleForm"
+        >
+          Navigate
+        </v-btn>
+      </div>
     </template>
   </v-card>
 </template>

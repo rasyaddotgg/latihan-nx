@@ -22,9 +22,13 @@ export default defineConfig(() => ({
       name: 'employee',
       filename: 'remoteEntry.js',
       exposes: {
-        './EmployeeList': './src/sections/employee/EmployeeList.vue',
+        './EmployeeListView': './src/views/EmployeeListView.vue',
         './EmployeeMenu': './src/sections/employee/EmployeeMenu.vue',
         './EmployeeButton': './src/components/EmployeeButton.vue',
+        './EmployeeCounter': './src/components/EmployeeCounter.vue',
+      },
+      remotes: {
+        host: 'http://localhost:4700/assets/remoteEntry.js',
       },
       shared: ['vue', 'vue-router'],
     }),
