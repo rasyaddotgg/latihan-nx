@@ -13,16 +13,16 @@
       "path": "./libs/frontend-lib"
     },
     {
-      "path": "./apps/backend/employee-service"
-    },
-    {
-      "path": "./apps/backend/api-gateway"
-    },
-    {
       "path": "./apps/frontend/host"
     },
     {
       "path": "./apps/frontend/remote"
+    },
+    {
+      "path": "./apps/backend/host-service-e2e"
+    },
+    {
+      "path": "./apps/backend/host-service"
     }
   ]
 }

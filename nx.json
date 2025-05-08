@@ -65,8 +65,7 @@
         "targetName": "test"
       },
       "exclude": [
-        "apps/backend/employee-service-e2e/**/*",
-        "apps/backend/api-gateway-e2e/**/*"
+        "apps/backend/host-service-e2e/**/*"
       ]
     }
   ],

@@ -30,6 +30,11 @@ const router = createRouter({
       name: 'employee-list',
       component: () => import('employee/EmployeeListView'),
     },
+    {
+      path: '/cms',
+      name: 'cms',
+      component: () => import('../views/CmsView.vue'),
+    },
   ],
 });
 

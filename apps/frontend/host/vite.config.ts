@@ -31,7 +31,6 @@ export default defineConfig(() => ({
       exposes: {
         './stores/useCounter': './src/stores/useCounter.ts',
       },
-      // malah error rror: ENOENT: no such file or directory, stat 'D:\PROGRAMMING\LATIHAN\latihan-nx\apps\frontend\host\node_modules\primevue\button' pas di build
       shared: ['vue', 'vue-router', 'pinia'],
     }),
   ],

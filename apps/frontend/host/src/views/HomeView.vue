@@ -3,6 +3,8 @@ import EmployeeMenu from 'employee/EmployeeMenu';
 import Counter from '../components/Counter.vue';
 import PayrollCounter from 'payroll/PayrollCounter';
 import EmployeeCounter from 'employee/EmployeeCounter';
+import UserList from 'employee/UserList';
+import Banner from '../components/Banner.vue';
 </script>
 
 <template>
@@ -16,7 +18,7 @@ import EmployeeCounter from 'employee/EmployeeCounter';
     >
     </v-alert>
     <div class="mb-4">
-      <EmployeeMenu />
+      <Banner />
     </div>
     <div class="mb-4">
       <v-row>
@@ -26,10 +28,15 @@ import EmployeeCounter from 'employee/EmployeeCounter';
       </v-row>
       <v-row>
         <v-col cols="12" sm="6">
-          <PayrollCounter />
+          <!-- <PayrollCounter /> -->
         </v-col>
         <v-col cols="12" sm="6">
-          <EmployeeCounter />
+          <!-- <EmployeeCounter /> -->
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col cols="12" sm="12">
+          <!-- <UserList /> -->
         </v-col>
       </v-row>
     </div>
