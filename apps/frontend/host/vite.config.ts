@@ -24,9 +24,7 @@ export default defineConfig(() => ({
       name: 'host',
       filename: 'remoteEntry.js',
       remotes: {
-        'remote-sample': 'http://localhost:4900/assets/remoteEntry.js',
-        employee: 'http://localhost:4300/assets/remoteEntry.js',
-        payroll: 'http://localhost:4500/assets/remoteEntry.js',
+        dummy: '$dummy.js',
       },
       exposes: {
         './stores/useCounter': './src/stores/useCounter.ts',
@@ -34,10 +32,6 @@ export default defineConfig(() => ({
       shared: ['vue', 'vue-router', 'pinia'],
     }),
   ],
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
   build: {
     outDir: './dist',
     emptyOutDir: true,

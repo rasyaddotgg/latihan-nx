@@ -7,6 +7,7 @@ import '@mdi/font/css/materialdesignicons.css';
 import { createVuetify } from 'vuetify';
 import * as components from 'vuetify/components';
 import * as directives from 'vuetify/directives';
+import { VueQueryPlugin } from '@tanstack/vue-query';
 import { createPinia } from 'pinia';
 
 const vuetify = createVuetify({
@@ -18,4 +19,5 @@ const app = createApp(App);
 app.use(router);
 app.use(vuetify);
 app.use(createPinia());
+app.use(VueQueryPlugin);
 app.mount('#root');

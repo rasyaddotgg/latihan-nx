@@ -7,7 +7,6 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'layout',
       component: AuthenticatedLayout,
       children: [
         {
@@ -32,8 +31,14 @@ const router = createRouter({
     },
     {
       path: '/cms',
-      name: 'cms',
-      component: () => import('../views/CmsView.vue'),
+      component: () => import('../layouts/CMSLayout.vue'),
+      children: [
+        {
+          path: '',
+          name: 'cms',
+          component: () => import('../views/CmsView.vue'),
+        },
+      ],
     },
   ],
 });

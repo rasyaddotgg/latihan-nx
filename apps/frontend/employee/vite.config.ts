@@ -20,32 +20,16 @@ export default defineConfig(() => ({
     tailwindcss(),
     federation({
       name: 'employee',
-      filename: 'remoteEntry.js',
+      filename: 'employee.js',
       exposes: {
-        './EmployeeListView': './src/views/EmployeeListView.vue',
-        './EmployeeMenu': './src/sections/employee/EmployeeMenu.vue',
-        './EmployeeButton': './src/components/EmployeeButton.vue',
-        './UserList': './src/components/UserList.vue',
-        // './EmployeeCounter': './src/components/EmployeeCounter.vue',
+        EmployeeListView: './src/views/EmployeeListView.vue',
+        EmployeeMenu: './src/sections/employee/EmployeeMenu.vue',
+        EmployeeButton: './src/components/EmployeeButton.vue',
+        UserList: './src/components/UserList.vue',
       },
-      // remotes: {
-      //   host: 'http://localhost:4700/assets/remoteEntry.js',
-      // },
       shared: ['vue', 'vue-router'],
     }),
   ],
-  resolve: {
-    // alias: {
-    //   '@frontend-lib': path.resolve(
-    //     __dirname,
-    //     '../../../libs/frontend-lib/src'
-    //   ),
-    // },
-  },
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
   build: {
     outDir: './dist',
     emptyOutDir: true,
