@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import AuthenticatedLayout from '../layouts/AuthenticatedLayout.vue';
+import { getAsyncComponent } from '../lib/helpers/federation/module_federation.ext';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,7 +28,11 @@ const router = createRouter({
     {
       path: '/employee-list',
       name: 'employee-list',
-      component: () => import('employee/EmployeeListView'),
+      component: () =>
+        getAsyncComponent(
+          'employeeList',
+          'http://localhost:4300/assets/employee.js'
+        ),
     },
     {
       path: '/cms',

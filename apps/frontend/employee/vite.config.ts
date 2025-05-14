@@ -27,7 +27,14 @@ export default defineConfig(() => ({
         EmployeeButton: './src/components/EmployeeButton.vue',
         UserList: './src/components/UserList.vue',
       },
-      shared: ['vue', 'vue-router'],
+      shared: {
+        vue: {
+          generate: false,
+        },
+        'vue-router': {
+          generate: false,
+        },
+      },
     }),
   ],
   build: {

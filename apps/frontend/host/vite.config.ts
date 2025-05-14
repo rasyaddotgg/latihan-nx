@@ -24,7 +24,10 @@ export default defineConfig(() => ({
       name: 'host',
       filename: 'remoteEntry.js',
       remotes: {
-        dummy: '$dummy.js',
+        dummy: {
+          external: '',
+          format: 'var',
+        },
       },
       exposes: {
         './stores/useCounter': './src/stores/useCounter.ts',
@@ -44,4 +47,7 @@ export default defineConfig(() => ({
     minify: false,
     cssMinify: false,
   },
+  // optimizeDeps: {
+  //   exclude: ['virtual:__federation__'],
+  // },
 }));
