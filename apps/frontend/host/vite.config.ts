@@ -24,10 +24,7 @@ export default defineConfig(() => ({
       name: 'host',
       filename: 'remoteEntry.js',
       remotes: {
-        dummy: {
-          external: '',
-          format: 'var',
-        },
+        dummy: '$dummy.js',
       },
       exposes: {
         './stores/useCounter': './src/stores/useCounter.ts',
